@@ -1,36 +1,46 @@
-﻿using app.web.core;
+﻿using System.Collections.Generic;
+using System.Linq;
 using app.utility;
-using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
-using System.Collections.Generic;
 
 namespace app.specs
 {
-    class LabelGeneratorSpec
+  class LabelGeneratorSpec
+  {
+    public abstract class concern : Observes<LabelGenerator>
     {
-        public abstract class concern : Observes<LabelGenerator>
-        {
-        }
-        public class when_creating_a_label : concern
-        {
-            Establish c = () =>
-                {
-                    result=new List<string>();
-                    depends.on<IList<string>>(new List<string> {"a","b","c","d","e","f"});
-                };
-            Because b = () =>
-            {
-                result.Add(sut.create_label());
-            };
-            
-            It creates_a_label = () =>
-                result[0].ShouldMatch("a");
-
-
-           
-
-            static List<string> result;
-        }
+      Establish c = () =>
+      {
+        depends.on(40);  
+        depends.on<IList<string>>(new List<string> {"a", "b", "c", "d", "e", "f"});
+      };
     }
+
+    public class when_creating_labels : concern
+    {
+      Because b = () =>
+        result = sut.Skip(number_to_skip).Take(1).First();
+
+      public class the_first_label
+      {
+        Establish c = () =>
+          number_to_skip = 0;
+
+        It should_be_the_first_character_in_the_symbol_map = () =>
+          result.ShouldEqual("a");
+      }
+
+      public class label_should_wrap_after_the_symbol_map_length_is_exceeded
+      {
+        Establish c = () =>
+          number_to_skip = 6;
+
+        It should_be_the_first_character_in_the_symbol_map = () =>
+          result.ShouldEqual("aa");
+      }
+      static int number_to_skip;
+      static string result;
+    }
+  }
 }
