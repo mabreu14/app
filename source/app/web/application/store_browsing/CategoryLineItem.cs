@@ -2,6 +2,6 @@
 {
   public class CategoryLineItem
   {
-     
+    public string name { get; set; }
   }
 }

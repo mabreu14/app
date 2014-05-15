@@ -2,6 +2,6 @@
 {
   public interface IRenderInformation
   {
-    void display<ViewModel>(ViewModel model);
+    void display<Report>(Report model);
   }
 }

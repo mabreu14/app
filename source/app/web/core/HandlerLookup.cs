@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using app.web.core.stubs;
 
 namespace app.web.core
 {
@@ -13,6 +14,11 @@ namespace app.web.core
     {
       this.all_handlers = all_handlers;
       this.create_missing_request_handler = create_missing_request_handler;
+    }
+
+    public HandlerLookup():this(new StubHandlers(), 
+      WebDelegates.create_missing_handler)
+    {
     }
 
     public IProcessOneWebRequest get_the_handler_for(IProvideDetailsAboutTheRequest request)

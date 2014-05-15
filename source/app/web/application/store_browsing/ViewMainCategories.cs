@@ -1,4 +1,6 @@
-﻿using app.web.core;
+﻿using app.web.application.store_browsing.stubs;
+using app.web.core;
+using app.web.core.aspnet;
 
 namespace app.web.application.store_browsing
 {
@@ -6,6 +8,11 @@ namespace app.web.application.store_browsing
   {
     IGetCategories categories;
     IRenderInformation response;
+
+    public ViewMainCategories() : this(new StubCategories(),
+      new WebFormResponseEngine())
+    {
+    }
 
     public ViewMainCategories(IGetCategories categories, IRenderInformation response)
     {

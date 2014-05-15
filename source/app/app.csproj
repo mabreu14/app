@@ -77,12 +77,22 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\application\store_browsing\IGetCategories.cs" />
     <Compile Include="web\application\store_browsing\CategoryLineItem.cs" />
+    <Compile Include="web\application\store_browsing\stubs\StubCategories.cs" />
     <Compile Include="web\application\store_browsing\ViewMainCategories.cs" />
     <Compile Include="web\core\aspnet\AspNetRequestHandler.cs" />
     <Compile Include="web\core\aspnet\ICreateARequestFromAspNetRequests.cs" />
+    <Compile Include="web\core\aspnet\ICreateAspTemplateInstances.cs" />
+    <Compile Include="web\core\aspnet\ICreatePageInstances.cs" />
+    <Compile Include="web\core\aspnet\IDisplayA.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\core\aspnet\IGetAPathToATemplate.cs" />
+    <Compile Include="web\core\aspnet\IGetTheCurrentlyExecutingContext.cs" />
+    <Compile Include="web\core\aspnet\stubs\StubTemplatePathRegistry.cs" />
+    <Compile Include="web\core\aspnet\WebFormResponseEngine.cs" />
+    <Compile Include="web\core\aspnet\WebFormTemplateFactory.cs" />
     <Compile Include="web\core\HandlerLookup.cs" />
     <Compile Include="web\core\ICreateAHandlerForAnUncofiguredRequest.cs" />
     <Compile Include="web\core\IFindHandlersToProcessRequests.cs" />
@@ -94,6 +104,8 @@
     <Compile Include="web\core\ISupportAUserFeature.cs" />
     <Compile Include="web\core\RequestHandler.cs" />
     <Compile Include="web\core\SingleRequestHandler.cs" />
+    <Compile Include="web\core\stubs\StubHandlers.cs" />
+    <Compile Include="web\core\stubs\WebDelegates.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
