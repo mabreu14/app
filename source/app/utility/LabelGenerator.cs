@@ -24,6 +24,7 @@ namespace app.utility
 
       if (index < length)
         return vocabulary[index];
+
       return create_label(number % length) + create_label(number / length);
     }
 

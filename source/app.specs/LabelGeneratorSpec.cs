@@ -12,7 +12,7 @@ namespace app.specs
     {
       Establish c = () =>
       {
-        depends.on(40);  
+        depends.on(40);
         depends.on<IList<string>>(new List<string> {"a", "b", "c", "d", "e", "f"});
       };
     }
@@ -39,6 +39,37 @@ namespace app.specs
         It should_be_the_first_character_in_the_symbol_map = () =>
           result.ShouldEqual("aa");
       }
+
+      public class smoke_tests
+      {
+        public class a_lot_of_labels
+        {
+          Establish c = () =>
+          {
+            generator = new LabelGenerator(new List<string>
+            {
+              "a",
+              "b",
+              "c"
+            }, 200);
+          };
+
+          Because b = () =>
+          {
+            foreach (var item in generator)
+            {
+              
+            }
+          };
+
+          It should_run_successfully = () =>
+            spec.exception_thrown.ShouldBeNull();
+            
+
+          static LabelGenerator generator;
+        }
+      }
+
       static int number_to_skip;
       static string result;
     }
