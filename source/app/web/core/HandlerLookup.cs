@@ -13,7 +13,13 @@ namespace app.web.core
 
     public IProcessOneWebRequest get_the_handler_for(IProvideDetailsAboutTheRequest request)
     {
-      throw new System.NotImplementedException();
+        foreach (var processOneWebRequest in all_handlers)
+        {
+            if (processOneWebRequest.can_handle(request))
+                return processOneWebRequest;
+        }
+        return null;
+        
     }
   }
 }
