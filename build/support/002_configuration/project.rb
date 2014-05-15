@@ -14,6 +14,7 @@ config =
   :app_dir => delayed{"source/#{configatron.project}.web.ui"},
   :log_file_name => delayed{"#{configatron.project}_log.txt"},
   :log_level => "DEBUG",
+  :our_new_setting => "This can be overriden along with all the others",
   :runner_processes => delayed{%W/#{configatron.browser.base_name_without_extension} iisexpress cmd/}
 }
 configatron.configure_from_hash config
