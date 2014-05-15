@@ -2,7 +2,7 @@ configs ={
   :git => {
     :provider => 'github',
     :user => 'intellisysmay2014',
-    :remotes => potentially_change("remotes",__FILE__),
+    :remotes => %w/mabreu14 adnanjt juanmcastillo gadielreyes 040mike Menyueru/,
     :repo => 'app' 
   }
 }
