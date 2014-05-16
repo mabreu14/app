@@ -2,8 +2,8 @@ using System.Collections.Generic;
 
 namespace app.web.application.store_browsing
 {
-  public interface IGetSubCategories
+  public interface IGetSubItemsOFCategories<Item>
   {
-    IEnumerable<CategoryLineItem> get_categories_in(SubCategoryListingInput parent);
+    IEnumerable<Item> get_categories_in(SubCategoryListingInput parent);
   }
 }

@@ -81,7 +81,9 @@
     <Compile Include="web\application\store_browsing\IGetCategories.cs" />
     <Compile Include="web\application\store_browsing\CategoryLineItem.cs" />
     <Compile Include="web\application\store_browsing\IGetSubCategories.cs" />
+    <Compile Include="web\application\store_browsing\ProductLineItem.cs" />
     <Compile Include="web\application\store_browsing\stubs\StubCategories.cs" />
+    <Compile Include="web\application\store_browsing\stubs\StubProducts.cs" />
     <Compile Include="web\application\store_browsing\SubCategoryListingInput.cs" />
     <Compile Include="web\application\store_browsing\ViewCategoryProducts.cs" />
     <Compile Include="web\application\store_browsing\ViewMainCategories.cs" />

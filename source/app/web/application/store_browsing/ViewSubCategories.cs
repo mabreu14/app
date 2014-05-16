@@ -4,10 +4,10 @@ namespace app.web.application.store_browsing
 {
   public class ViewSubCategories : ISupportAUserFeature
   {
-    IGetSubCategories sub_categories;
+    IGetSubItemsOFCategories<CategoryLineItem> sub_categories;
     IRenderInformation response;
 
-    public ViewSubCategories(IRenderInformation response, IGetSubCategories sub_categories)
+    public ViewSubCategories(IRenderInformation response, IGetSubItemsOFCategories<CategoryLineItem> sub_categories)
     {
       this.response = response;
       this.sub_categories = sub_categories;
