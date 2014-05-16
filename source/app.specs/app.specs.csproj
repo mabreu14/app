@@ -119,6 +119,7 @@
     <Compile Include="RequestHandlerSpecs.cs" />
     <Compile Include="SingleRequestHandlerSpecs.cs" />
     <Compile Include="utility\ObectFactory.cs" />
+    <Compile Include="ViewCategoryProductsSpecs.cs" />
     <Compile Include="ViewMainCategoriesSpecs.cs" />
     <Compile Include="ViewSubCategoriesSpecs.cs" />
     <Compile Include="WebFormResponseEngineSpecs.cs" />
