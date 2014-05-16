@@ -13,6 +13,7 @@ namespace app.web.core.stubs
 
     public IEnumerator<IProcessOneWebRequest> GetEnumerator()
     {
+      yield return new SingleRequestHandler(x => true, new ViewCategoryProducts());
       yield return new SingleRequestHandler(x => true, new ViewMainCategories());
     }
   }
