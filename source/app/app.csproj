@@ -80,6 +80,7 @@
     <Compile Include="utility\LabelGenerator.cs" />
     <Compile Include="web\application\store_browsing\IGetCategories.cs" />
     <Compile Include="web\application\store_browsing\CategoryLineItem.cs" />
+    <Compile Include="web\application\store_browsing\IGetSubCategories.cs" />
     <Compile Include="web\application\store_browsing\stubs\StubCategories.cs" />
     <Compile Include="web\application\store_browsing\ViewMainCategories.cs" />
     <Compile Include="web\application\store_browsing\ViewSubCategories.cs" />

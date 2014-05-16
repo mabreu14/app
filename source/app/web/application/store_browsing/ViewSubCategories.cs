@@ -4,9 +4,18 @@ namespace app.web.application.store_browsing
 {
   public class ViewSubCategories : ISupportAUserFeature
   {
+    IGetSubCategories sub_categories;
+    IRenderInformation response;
+
+    public ViewSubCategories(IRenderInformation response, IGetSubCategories sub_categories)
+    {
+      this.response = response;
+      this.sub_categories = sub_categories;
+    }
+
     public void process(IProvideDetailsAboutTheRequest request)
     {
-      throw new System.NotImplementedException();
+      this.response.display(sub_categories.get_sub_categories());
     }
   }
 }

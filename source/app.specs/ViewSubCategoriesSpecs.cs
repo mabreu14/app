@@ -21,12 +21,12 @@ namespace app.specs
       {
         request = fake.an<IProvideDetailsAboutTheRequest>();
 
-        subCategories = depends.on<IGetSubCategories>();
+        sub_categories_lookup = depends.on<IGetSubCategories>();
         response_engine = depends.on<IRenderInformation>();
 
         sub_categories = new List<CategoryLineItem>();
 
-        subCategories.setup(x => x.get_sub_categories()).Return(sub_categories);
+        sub_categories_lookup.setup(x => x.get_sub_categories()).Return(sub_categories);
       };
 
       Because b = () =>
@@ -35,7 +35,7 @@ namespace app.specs
       It displays_the_list_of_sub_categories = () =>
         response_engine.received(x => x.display(sub_categories));
 
-      static IGetSubCategories subCategories;
+      static IGetSubCategories sub_categories_lookup;
       static IProvideDetailsAboutTheRequest request;
       static IEnumerable<CategoryLineItem> sub_categories;
       static IRenderInformation response_engine;
