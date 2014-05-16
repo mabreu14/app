@@ -24,14 +24,14 @@ namespace app.specs
 
             main_category = new SubCategoryListingInput();
 
-            sub_categories_lookup = depends.on<IGetSubItemsOFCategories<ProductLineItem>>();
+            sub_categories_lookup = depends.on<IGetProducts>();
             response_engine = depends.on<IRenderInformation>();
 
             products = new List<ProductLineItem>();
 
             request.Stub(x => x.map<SubCategoryListingInput>()).Return(main_category);
 
-            sub_categories_lookup.setup(x => x.get_categories_in(main_category)).Return(products);
+            sub_categories_lookup.setup(x => x.get_products_in(main_category)).Return(products);
         };
 
         Because b = () =>
@@ -40,7 +40,7 @@ namespace app.specs
         It displays_the_list_of_sub_categories = () =>
           response_engine.received(x => x.display(products));
 
-        static IGetSubItemsOFCategories<ProductLineItem> sub_categories_lookup;
+        static IGetProducts sub_categories_lookup;
         static IProvideDetailsAboutTheRequest request;
         static IEnumerable<ProductLineItem> products;
         static IRenderInformation response_engine;

@@ -9,7 +9,7 @@ namespace app.web.application.store_browsing
     IGetCategories categories;
     IRenderInformation response;
 
-    public ViewMainCategories() : this(new StubCategories(),
+    public ViewMainCategories() : this(new StubReportData(),
       new WebFormResponseEngine())
     {
     }

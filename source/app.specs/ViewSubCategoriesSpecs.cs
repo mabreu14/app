@@ -24,7 +24,7 @@ namespace app.specs
 
         main_category = new SubCategoryListingInput();
 
-        sub_categories_lookup = depends.on<IGetSubItemsOFCategories<CategoryLineItem>>();
+        sub_categories_lookup = depends.on<IGetSubCategories>();
         response_engine = depends.on<IRenderInformation>();
 
         sub_categories = new List<CategoryLineItem>();
@@ -40,7 +40,7 @@ namespace app.specs
       It displays_the_list_of_sub_categories = () =>
         response_engine.received(x => x.display(sub_categories));
 
-      static IGetSubItemsOFCategories<CategoryLineItem> sub_categories_lookup;
+      static IGetSubCategories sub_categories_lookup;
       static IProvideDetailsAboutTheRequest request;
       static IEnumerable<CategoryLineItem> sub_categories;
       static IRenderInformation response_engine;

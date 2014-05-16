@@ -6,15 +6,10 @@ namespace app.web.application.store_browsing
 {
   public class ViewCategoryProducts : ISupportAUserFeature
   {
-     IGetSubItemsOFCategories<ProductLineItem> products;
+    IGetProducts products;
     IRenderInformation response;
 
-
-    public ViewCategoryProducts(): this(new WebFormResponseEngine(), new StubProducts())
-    {
-    }
-
-    public ViewCategoryProducts(IRenderInformation response, IGetSubItemsOFCategories<ProductLineItem> products)
+    public ViewCategoryProducts(IRenderInformation response, IGetProducts products)
     {
       this.response = response;
       this.products = products;
@@ -22,8 +17,7 @@ namespace app.web.application.store_browsing
 
     public void process(IProvideDetailsAboutTheRequest request)
     {
-        this.response.display(products.get_categories_in(request.map<SubCategoryListingInput>()));
+      this.response.display(products.get_products_in(request.map<SubCategoryListingInput>()));
     }
-
   }
 }
