@@ -1,5 +1,7 @@
-﻿using app.web.application.store_browsing;
+﻿using System.Collections.Generic;
+using app.web.application.store_browsing;
 using app.web.core;
+using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 
@@ -15,9 +17,28 @@ namespace app.specs
 
     public class when_run : concern
     {
-      It first_observation = () =>
+      Establish c = () =>
       {
+        request = fake.an<IProvideDetailsAboutTheRequest>();
+
+        subCategories = depends.on<IGetSubCategories>();
+        response_engine = depends.on<IRenderInformation>();
+
+        sub_categories = new List<CategoryLineItem>();
+
+        subCategories.setup(x => x.get_sub_categories()).Return(sub_categories);
       };
+
+      Because b = () =>
+        sut.process(request);
+
+      It displays_the_list_of_sub_categories = () =>
+        response_engine.received(x => x.display(sub_categories));
+
+      static IGetSubCategories subCategories;
+      static IProvideDetailsAboutTheRequest request;
+      static IEnumerable<CategoryLineItem> sub_categories;
+      static IRenderInformation response_engine;
     }
   }
 }
