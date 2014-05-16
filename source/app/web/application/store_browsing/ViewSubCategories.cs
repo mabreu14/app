@@ -15,7 +15,7 @@ namespace app.web.application.store_browsing
 
     public void process(IProvideDetailsAboutTheRequest request)
     {
-      this.response.display(sub_categories.get_sub_categories());
+      this.response.display(sub_categories.get_categories_in(request.map<SubCategoryListingInput>()));
     }
   }
 }

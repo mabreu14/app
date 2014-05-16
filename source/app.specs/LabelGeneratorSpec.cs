@@ -54,17 +54,17 @@ namespace app.specs
             }, 200);
           };
 
-          Because b = () =>
+          Because b = () => spec.catch_exception(() =>
           {
             foreach (var item in generator)
             {
-              
             }
-          };
+          });
 
           It should_run_successfully = () =>
-            spec.exception_thrown.ShouldBeNull();
-            
+          {
+
+          };
 
           static LabelGenerator generator;
         }

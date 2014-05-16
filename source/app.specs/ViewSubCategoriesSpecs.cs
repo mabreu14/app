@@ -4,6 +4,7 @@ using app.web.core;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
+using Rhino.Mocks;
 
 namespace app.specs
 {
@@ -21,14 +22,16 @@ namespace app.specs
       {
         request = fake.an<IProvideDetailsAboutTheRequest>();
 
-        main_category = new CategoryLineItem(){name = "TestCategory"};
+        main_category = new SubCategoryListingInput();
 
         sub_categories_lookup = depends.on<IGetSubCategories>();
         response_engine = depends.on<IRenderInformation>();
 
         sub_categories = new List<CategoryLineItem>();
 
-        sub_categories_lookup.setup(x => x.get_sub_categories()).Return(sub_categories);
+        request.Stub(x => x.map<SubCategoryListingInput>()).Return(main_category);
+
+        sub_categories_lookup.setup(x => x.get_categories_in(main_category)).Return(sub_categories);
       };
 
       Because b = () =>
@@ -41,7 +44,7 @@ namespace app.specs
       static IProvideDetailsAboutTheRequest request;
       static IEnumerable<CategoryLineItem> sub_categories;
       static IRenderInformation response_engine;
-      static CategoryLineItem main_category;
+      static SubCategoryListingInput main_category;
     }
   }
 }

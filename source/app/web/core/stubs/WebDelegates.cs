@@ -14,6 +14,10 @@ namespace app.web.core.stubs
 
     class FakeRequest : IProvideDetailsAboutTheRequest
     {
+      public InputModel map<InputModel>()
+      {
+        return Activator.CreateInstance<InputModel>();
+      }
     }
   }
 }

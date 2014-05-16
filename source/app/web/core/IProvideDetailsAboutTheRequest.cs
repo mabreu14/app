@@ -2,5 +2,6 @@
 {
   public interface IProvideDetailsAboutTheRequest
   {
+    InputModel map<InputModel>();
   }
 }
