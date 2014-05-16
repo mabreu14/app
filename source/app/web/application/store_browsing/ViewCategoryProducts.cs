@@ -1,4 +1,4 @@
-﻿using app.web.application.store_browsing.stubs;
+using app.web.application.store_browsing.stubs;
 using app.web.core;
 using app.web.core.aspnet;
 
