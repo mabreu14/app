@@ -16,7 +16,9 @@ namespace app.console
       }, 200);
 
       foreach (var label in generator)
-        Console.Out.WriteLine(label); 
+        Console.Out.WriteLine(label);
+
+      Console.ReadLine(); 
 
     }
   }

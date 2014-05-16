@@ -82,6 +82,7 @@
     <Compile Include="web\application\store_browsing\CategoryLineItem.cs" />
     <Compile Include="web\application\store_browsing\stubs\StubCategories.cs" />
     <Compile Include="web\application\store_browsing\ViewMainCategories.cs" />
+    <Compile Include="web\application\store_browsing\ViewSubCategories.cs" />
     <Compile Include="web\core\aspnet\AspNetRequestHandler.cs" />
     <Compile Include="web\core\aspnet\ICreateARequestFromAspNetRequests.cs" />
     <Compile Include="web\core\aspnet\ICreateAspTemplateInstances.cs" />
