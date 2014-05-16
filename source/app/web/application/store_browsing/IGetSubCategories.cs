@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 
-namespace app.web.application.store_browsing {
-	public interface IGetSubCategories {
+namespace app.web.application.store_browsing
+{
+  public interface IGetSubCategories
+  {
+    CategoryLineItem main_category { get; set; }
 
-        CategoryLineItem MainCategory { get; set; }
-
-		IEnumerable<CategoryLineItem> get_sub_categories();
-	}
+    IEnumerable<CategoryLineItem> get_sub_categories();
+  }
 }

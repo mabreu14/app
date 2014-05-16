@@ -27,7 +27,6 @@ namespace app.specs
         response_engine = depends.on<IRenderInformation>();
 
         sub_categories = new List<CategoryLineItem>();
-        sub_categories_lookup.MainCategory = main_category;
 
         sub_categories_lookup.setup(x => x.get_sub_categories()).Return(sub_categories);
       };
