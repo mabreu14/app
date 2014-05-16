@@ -21,10 +21,13 @@ namespace app.specs
       {
         request = fake.an<IProvideDetailsAboutTheRequest>();
 
+        main_category = new CategoryLineItem(){name = "TestCategory"};
+
         sub_categories_lookup = depends.on<IGetSubCategories>();
         response_engine = depends.on<IRenderInformation>();
 
         sub_categories = new List<CategoryLineItem>();
+        sub_categories_lookup.MainCategory = main_category;
 
         sub_categories_lookup.setup(x => x.get_sub_categories()).Return(sub_categories);
       };
@@ -39,6 +42,7 @@ namespace app.specs
       static IProvideDetailsAboutTheRequest request;
       static IEnumerable<CategoryLineItem> sub_categories;
       static IRenderInformation response_engine;
+      static CategoryLineItem main_category;
     }
   }
 }
