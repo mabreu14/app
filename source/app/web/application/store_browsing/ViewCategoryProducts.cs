@@ -15,6 +15,11 @@ namespace app.web.application.store_browsing
       this.products = products;
     }
 
+    public ViewCategoryProducts():this(new WebFormResponseEngine(),
+      new StubReportData())
+    {
+    }
+
     public void process(IProvideDetailsAboutTheRequest request)
     {
       this.response.display(products.get_products_in(request.map<SubCategoryListingInput>()));
