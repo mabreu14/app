@@ -113,7 +113,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MessageGeneratorSpecs.cs" />
+    <Compile Include="AspNetRequestHandlerSpecs.cs" />
+    <Compile Include="HandlerLookupSpecs.cs" />
+    <Compile Include="LabelGeneratorSpec.cs" />
+    <Compile Include="RequestHandlerSpecs.cs" />
+    <Compile Include="SingleRequestHandlerSpecs.cs" />
+    <Compile Include="utility\ObectFactory.cs" />
+    <Compile Include="ViewCategoryProductsSpecs.cs" />
+    <Compile Include="ViewItemsSpecs.cs" />
+    <Compile Include="ViewMainCategoriesSpecs.cs" />
+    <Compile Include="ViewSubCategoriesSpecs.cs" />
+    <Compile Include="WebFormResponseEngineSpecs.cs" />
+    <Compile Include="WebFormTemplateFactorySpecs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

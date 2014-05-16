@@ -27,11 +27,11 @@
    </system.web>
   <system.webServer>
     <% if configatron.has_iis_express %>
-    <!--<handlers>
-      <add name="" path=""
+    <handlers>
+      <add name="custom_handler" path="*.intellisys"
         verb="*"
-        type=""/>
-        </handlers> -->
+        type="app.web.core.aspnet.AspNetRequestHandler, app"/>
+        </handlers>
     <% end %>
   </system.webServer>
 
