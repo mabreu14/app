@@ -78,11 +78,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="utility\LabelGenerator.cs" />
+    <Compile Include="web\application\store_browsing\DatabaseConnection.cs" />
     <Compile Include="web\application\store_browsing\IGetCategories.cs" />
     <Compile Include="web\application\store_browsing\CategoryLineItem.cs" />
     <Compile Include="web\application\store_browsing\IGetItems.cs" />
     <Compile Include="web\application\store_browsing\IGetProducts.cs" />
     <Compile Include="web\application\store_browsing\IGetSubCategories.cs" />
+    <Compile Include="web\application\store_browsing\IQueryADatabase.cs" />
     <Compile Include="web\application\store_browsing\ProductLineItem.cs" />
     <Compile Include="web\application\store_browsing\stubs\StubReportData.cs" />
     <Compile Include="web\application\store_browsing\SubCategoryListingInput.cs" />
